@@ -9,6 +9,11 @@ int Сoordinate(string text)
     int coord = Convert.ToInt32(noconvert);
     return coord;
 }
+int QuadKat(int num1, int num2)
+{
+    int result = (num2 - num1) * (num2 - num1);
+    return result;
+}
 int x1 = Сoordinate("x1: ");
 int y1 = Сoordinate("y1: ");
 int z1 = Сoordinate("z1: ");
@@ -16,5 +21,5 @@ int x2 = Сoordinate("x2: ");
 int y2 = Сoordinate("y2: ");
 int z2 = Сoordinate("z2: ");
 
-double dist = Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1) + (z2 - z1) * (z2 - z1));
+double dist = Math.Sqrt(QuadKat(x1, x2) + QuadKat(y1, y2) + QuadKat(z1, z2));
 Console.WriteLine($"Расстояние между точками = {Math.Round(dist, 2)}");
