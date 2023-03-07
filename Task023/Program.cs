@@ -2,9 +2,24 @@
 // 3 -> 1, 8, 27
 // 5 -> 1, 8, 27, 64, 125
 
-Console.WriteLine("Введите число N: ");
-int n = Convert.ToInt32(Console.ReadLine());
-for (int i = 1; i <= n; i++)
+void Table(int num)
 {
-    Console.WriteLine($"{i, 3} -> {i*i*i, 3}");
+    int i = 1;
+    while (i <= num)
+    {
+        Console.WriteLine($"{i, 3} -> {i*i*i, 3}");
+        i++;
+    }
+}
+
+Console.Write("Введите число N: ");
+int n = Convert.ToInt32(Console.ReadLine());
+if (n > 0)
+{
+    Table(n);
+}
+else
+{
+    n = n * -1;
+    Table(n);
 }
