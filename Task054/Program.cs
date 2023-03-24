@@ -40,19 +40,23 @@ void SortMatrixRowsFromMaxToMin(int[,] matr)
     {
         for (int m = 0; m < matr.GetLength(1); m++)
         {
-            int max = matr[i, m];
+            int max = m;
             for (int j = m; j < matr.GetLength(1); j++)
             {
-                if (matr[i, j] > max)
+                if (matr[i, j] > matr[i, max])
                 {
-                    max = matr[i, j];
+                    max = j;
                 }
                 j++;
             }
-            int buffer = matr[i, m];
-            matr[i, m] = max;
-            max = buffer;
+            if (matr[i, m] != matr[i, max])
+            {
+                int buffer = matr[i, m];
+                matr[i, m] = matr[i, max];
+                matr[i, max] = buffer;
+            }
         }
+        
     }
 }
 
