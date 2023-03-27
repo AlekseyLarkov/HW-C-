@@ -61,7 +61,8 @@ Console.Write("Введите количество столбцов: ");
 int column = Convert.ToInt32(Console.ReadLine());
 
 int[,] matrix = CreateMatrixRndInt(row, column);
+Console.WriteLine("Не сортированный массив");
 PrintMatrix(matrix);
-Console.WriteLine();
+Console.WriteLine("Сортированный массив");
 SortMatrixRowsFromMaxToMin(matrix);
 PrintMatrix(matrix);
