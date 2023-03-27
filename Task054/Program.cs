@@ -28,14 +28,14 @@ void PrintMatrix(int[,] matr)
         Console.Write("|");
         for (int j = 0; j < matr.GetLength(1); j++)
         {
-            Console.Write($"{matr[i, j], 4} ");
+            Console.Write($"{matr[i, j],4} ");
         }
         Console.WriteLine("|");
     }
 }
 void SortMatrixRowsFromMaxToMin(int[,] matr)
 {
-    
+
     for (int i = 0; i < matr.GetLength(0); i++)
     {
         for (int m = 0; m < matr.GetLength(1); m++)
@@ -47,16 +47,11 @@ void SortMatrixRowsFromMaxToMin(int[,] matr)
                 {
                     max = j;
                 }
-                j++;
             }
-            if (matr[i, m] != matr[i, max])
-            {
-                int buffer = matr[i, m];
-                matr[i, m] = matr[i, max];
-                matr[i, max] = buffer;
-            }
+            int buffer = matr[i, m];
+            matr[i, m] = matr[i, max];
+            matr[i, max] = buffer;
         }
-        
     }
 }
 
