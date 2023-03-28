@@ -33,7 +33,7 @@ void PrintMatrix(int[,] matr)
 }
 int[,] MatrixProduct(int[,] mtrx1, int[,] mtrx2)
 {
-    int[,] result = new int[mtrx1.GetLength(1), mtrx2.GetLength(0)];
+    int[,] result = new int[mtrx1.GetLength(0), mtrx2.GetLength(1)];
     for (int i = 0; i < result.GetLength(0); i++)
     {
         for (int j = 0; j < result.GetLength(1); j++)
